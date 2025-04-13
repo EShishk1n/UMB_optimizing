@@ -5,10 +5,10 @@ from code___.classes import ObjectFromRaports
 
 
 def open_sheet(filename: str, sheetname: str) -> worksheet:
-    wb = load_workbook(filename)
-    sheet_ranges = wb[sheetname]
+    wb = load_workbook(filename, read_only=True, data_only=True, keep_links=False)
 
-    return sheet_ranges
+    return wb[sheetname]
+
 
 def create_classes(dzo: str,
                    fieldname_list: list[str],
