@@ -5,7 +5,7 @@ from code___.classes import ObjectFromRaports
 
 
 def open_sheet(filename: str, sheetname: str) -> worksheet:
-    wb = load_workbook(filename, read_only=True, data_only=True, keep_links=False)
+    wb = load_workbook(filename, read_only=False, data_only=True, keep_links=False)
 
     return wb[sheetname]
 
